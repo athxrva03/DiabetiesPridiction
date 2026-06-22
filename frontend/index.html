@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Diabetes Dashboard - Level 4</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>🩺 Diabetes Prediction Dashboard</h1>
+
+    <!-- INPUT CARD -->
+    <div class="card">
+
+        <input id="bmi" placeholder="BMI">
+        <input id="age" placeholder="Age">
+        <input id="highBP" placeholder="High BP (0/1)">
+        <input id="highChol" placeholder="High Chol (0/1)">
+        <input id="smoker" placeholder="Smoker (0/1)">
+
+        <button onclick="predict()">Predict Risk</button>
+
+        <div id="loading">Processing...</div>
+
+        <div id="result"></div>
+
+    </div>
+
+    <!-- STATS -->
+    <div class="stats">
+        <div>Total: <span id="total">0</span></div>
+        <div>High Risk: <span id="highRisk">0</span></div>
+    </div>
+
+    <!-- CHART -->
+    <div class="chart-box">
+        <canvas id="chart"></canvas>
+    </div>
+
+    <!-- HISTORY -->
+    <h2>Prediction History</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Probability</th>
+                <th>Risk</th>
+            </tr>
+        </thead>
+        <tbody id="history"></tbody>
+    </table>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
